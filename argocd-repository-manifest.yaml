@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  labels:
+    argocd.argoproj.io/secret-type: repository
+  name: example-private-helm-oci-chart
+  namespace: argocd
+stringData:
+  url: ghcr.io/tankibaj/private-oci-helm-chart-repo-with-argocd
+  name: private-helm-oci
+  type: helm
+  enableOCI: "true"
+  username: <Github Username>
+  password: <Github Access Token>
